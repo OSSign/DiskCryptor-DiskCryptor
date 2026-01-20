@@ -1,0 +1,19 @@
+.OPTION EXPLICIT ;
+.Set CabinetName1=dcrypt.cab
+.Set CompressionType=LZX
+.Set CabinetFileCountThreshold=0
+.Set FolderFileCountThreshold=0
+.Set FolderSizeThreshold=0
+.Set MaxCabinetSize=0
+.Set MaxDiskFileCount=0
+.Set MaxDiskSize=0
+
+.Set DestinationDir=dcrypt_x64;
+DCrypt/dcrypt.inf
+DCrypt/Bin/Release_amd64/dcrypt.sys
+DCrypt/Bin/Release_amd64/dcrypt.pdb
+
+.Set DestinationDir=dcrypt_arm64;
+DCrypt/dcrypt.inf
+DCrypt/Bin/Release_arm64/dcrypt.pdb
+DCrypt/Bin/Release_arm64/dcrypt.sys
