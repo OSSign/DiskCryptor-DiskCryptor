@@ -47,14 +47,7 @@ jobs:
         with:
           name: DCrypt_Artifacts_PreSignature
           path: |
-            DCrypt/Bin/Release_amd64/*.dll
-            DCrypt/Bin/Release_amd64/*.sys
-            DCrypt/Bin/Release_amd64/*.pdb
-            DCrypt/Bin/Release_amd64/*.exe
-            DCrypt/Bin/Release_arm64/*.dll
-            DCrypt/Bin/Release_arm64/*.pdb
-            DCrypt/Bin/Release_arm64/*.sys
-            DCrypt/Bin/Release_arm64/*.exe
+            DCrypt/Bin
 
   sign:
     environment: OSSign
@@ -76,12 +69,14 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           installOnly: false
           inputFiles: |
-            DCRypt/Bin/Release_arm64/*.exe
-            DCrypt/Bin/Release_amd64/*.exe
+            DCrypt/Bin/**/*.exe
+            DCrypt/Bin/**/*.exe
           fileType: pecoff
 
       - name: Package files
         run: |
+          ls DCrypt
+          ls DCrypt/Bin/
           7z a DCrypt/Bin/release_arm64.zip DCrypt/Bin/Release_arm64
           7z a DCrypt/Bin/release_amd64.zip DCRypt/Bin/Release_amd64
 
