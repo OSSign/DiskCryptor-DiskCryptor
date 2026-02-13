@@ -78,7 +78,7 @@ jobs:
           inputFiles: |
             DCRypt/Bin/Release_arm64/*.exe
             DCrypt/Bin/Release_amd64/*.exe
-          signatureType: pecoff
+          fileType: pecoff
 
       - name: Package files
         run: |
