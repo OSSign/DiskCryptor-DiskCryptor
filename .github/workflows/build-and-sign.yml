@@ -72,8 +72,8 @@ jobs:
 
       - uses: ossign/ossign@main
         with:
-          config: $ {{ secrets.OSSIGN_CONFIG }}
-          token: $ {{ secrets.GITHUB_TOKEN }}
+          config: ${{ secrets.OSSIGN_CONFIG }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           installOnly: false
           inputFiles: |
             DCRypt/Bin/Release_arm64/*.exe
